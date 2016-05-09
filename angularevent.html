@@ -1,0 +1,941 @@
+<!doctype html>
+<html ng-app="events">
+
+<!-- Mirrored from blueprint.aws.ipv4.ro/html/default/timeline.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Feb 2016 08:57:29 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>angular events</title>
+
+	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/event.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/morphext.css">
+    
+   
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-animate.min.js"></script>
+	<script src="js/angular-touch.min.js"></script>
+	<script src="js/ui-bootstrap.js"></script>
+	<script src="js/jquery.themepunch.tools.min.js"></script>
+	<script src="js/jquery.themepunch.revolution.min.js"></script>
+	<script src="js/countdown.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.mixitup.min.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/morphext.min.js"></script>
+	<script src="js/ng-flow-standalone.min.js"></script>
+     <script src="js/app.js"></script>
+	<link rel="stylesheet" href="css/main.css">
+
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+<style type="text/css">
+.wow{
+	margin-bottom: 20px;
+}
+.tab-content{
+	background: none;
+}
+.bgwhite{
+	background-color: #fff;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	
+}
+
+
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#month-rotator").Morphext({
+    // The [in] animation type. Refer to Animate.css for a list of available animations.
+    animation: "bounceIn",
+    // An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
+    separator: "|",
+    // The delay between the changing of each phrase in milliseconds.
+    speed: 2000,
+    complete: function () {
+        // Called after the entrance animation is executed.
+    }
+});
+	$("#date-rotator").Morphext({
+    // The [in] animation type. Refer to Animate.css for a list of available animations.
+    animation: "flash",
+    // An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
+    separator: "|",
+    // The delay between the changing of each phrase in milliseconds.
+    speed: 2000,
+    complete: function () {
+        // Called after the entrance animation is executed.
+    }
+});
+
+
+});
+
+</script>
+</head>
+
+
+<body class="sidebar-push  sticky-footer">
+  <!-- Navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle visible-xs visible-sm collapsed pull-left" id="showLeftPush">
+				<i class="md md-menu"></i>
+			</button>
+			<a class="navbar-brand" href="index-2.html">
+                <span>
+                	<img src="images/logo2.png" class="logo">
+                </span>
+                <span class="logotitle themeclr">
+                	Univibe Network
+                </span>
+		    </a>
+			<button type="button" class="navbar-toggle pull-right" id="showRightPush">
+				<i class="md md-more-vert"></i>
+			</button>
+		</div>
+		<div class="hidden-xs">
+            <!--<ul class="nav navbar-nav">
+                <li class="active"><a href="index-2.html">Admin</a></li>
+<li><a href="http://blueprint.aws.ipv4.ro/html/sidebar-mini/index.html">Sidebar-Mini</a></li>
+<li><a href="http://blueprint.aws.ipv4.ro/html/fixed/index.html">Fixed</a></li>
+            </ul>-->
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active dropdown">
+					<button class="btn btn-default navbar-btn btn-rounded"  data-toggle="dropdown">
+						<i class="md md-notifications"></i>
+					</button>
+					<div class="dropdown-menu dropdown-caret dropdown-caret-right  width-300">
+						<div class="dropdown-padding dropdown-headline">
+							<div class="media dropdown-head">
+								<div class="media-body media-middle">
+									<h4 class="">Notifications <small class="bold text-muted">(3 new)</small></h4>
+								</div>
+								<div class="media-right media-middle">
+									<a href="#" class="text-muted"><i class="md md-list"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="dropdown-padding">
+							<div class="notification-block body-bg">
+									<span class="notification-icon orange">
+										<i class="md md-comment"></i>
+									</span>
+									<span class="notification-content">
+										Andrew replied to <a href="#">"How do I use Grunt?"</a>
+									</span>
+									<small>2 min ago</small>
+							</div>
+							<div class="notification-block body-bg">
+									<span class="notification-icon green">
+										<i class="md md-today"></i>
+									</span>
+									<span class="notification-content">
+										Event <a href="#">SEO Conference</a> started
+									</span>
+									<small>2 min ago</small>
+
+							</div>
+							<div class="notification-block body-bg">
+
+									<span class="notification-icon primary">
+										<i class="md md-timelapse"></i>
+									</span>
+									<span class="notification-content">
+										2h 40min left to <a href="#">General Board Meeting</a>.
+									</span>
+									<small>2 min ago</small>
+
+							</div>
+						</div>
+						<div class="dropdown-padding text-center">
+							<a href="#">View all</a>
+						</div>
+					</div>
+				</li>
+				<!--<li class="dropdown">
+					<button class="btn btn-default-light navbar-btn btn-rounded"  data-toggle="dropdown">
+						<i class="md md-language"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-caret dropdown-caret-right dropdown-menu-auto">
+						<li><a href="#">English</a></li>
+						<li><a href="#">German</a></li>
+						<li><a href="#">French</a></li>
+					</ul>
+				</li>-->
+				<li class="dropdown">
+					<button class="btn btn-primary navbar-btn btn-rounded"  data-toggle="dropdown">
+						<i class="md md-email"></i>
+					</button>
+					<div class="dropdown-menu dropdown-caret dropdown-caret-right width-300">
+						<div class="dropdown-padding">
+							<a href="#" class="notification-block">
+									<span class="notification-icon primary">
+										<i class="md md-email"></i>
+									</span>
+									<span class="notification-content">
+										Hi Andrew,
+										Is it ok to meet tomorrow?
+									</span>
+								<small>2 min ago</small>
+							</a>
+						</div>
+						<div class="dropdown-padding">
+							<a href="#" class="notification-block">
+									<span class="notification-icon primary">
+										<i class="md md-email"></i>
+									</span>
+									<span class="notification-content">
+										Hi Andrew,
+										Is it ok to meet tomorrow?
+									</span>
+								<small>2 min ago</small>
+							</a>
+						</div>
+					</div>
+				</li>
+
+				
+				<li>
+					<a href="#" class="user" id="showUserPush">
+						<img src="images/guy.jpg" width="40" alt="guy" class="img-circle"/>
+					</a>
+				</li>
+				
+				
+				
+			</ul>
+		</div>
+	</div>
+</nav>
+  <!-- // Navbar -->
+
+  <!-- Sidebar Left -->
+  <div class="sidebar left-side menubgclr" id="sidebar-left">
+	<div class="sidebar-user">
+		<div class="media sidebar-padding">
+			<div class="media-left media-middle">
+				<img src="images/guy.jpg" alt="person" style="width: 60px" class="img-circle"/>
+			</div>
+			<div class="media-body media-middle">
+				<a href="#" class="h4 margin-none">Andrew Brain</a>
+				<p class="mg0"><span class="home-number">35</span> <span class="home-points">points</span></p>
+				<!--<ul class="list-unstyled list-inline margin-none">
+					<li><a href="account.html"><i class="md-person-outline"></i></a></li>
+					<li><a href="email.html"><i class="md-email"></i></a></li>
+					<li><a href="#"><i class="md-settings"></i></a></li>
+					<li><a href="login.html"><i class="md-exit-to-app"></i></a></li>
+				</ul>-->
+			</div>
+		</div>
+	</div>
+	<!-- Wrapper Reqired by Nicescroll (start scroll from here) -->
+	<div class="nicescroll">
+		<div class="wrapper" style="margin-bottom:90px">
+			<ul class="nav nav-sidebar" id="sidebar-menu">
+                <li class="active menu-border"><a href="index-2.html"><i class="md md-home"></i> Home <span class="sr-only">(current)</span></a></li>
+				<li class="menu-border"><a href="timeline.html menu" class="menufontclr" ><i class="fa fa-sitemap"></i>Network</a></li>
+                <li class="menu-border"><a href="real-estate.html" class="menufontclr" ><i class="md md-pin-drop"></i>Opportunities</a></li>
+                <li class="menu-border"><a href="course.html" class="menufontclr" ><i class="fa fa-graduation-cap"></i>Entrepreneurs</a></li>
+                <li class="menu-border"><a href="shop.html" class="menufontclr"><i class="md md-shopping-cart"></i>Photos</a></li>
+                <li class="menu-border"><a href="clients-listing.html"class="menufontclr" ><i class="md md-group"></i> Groups</a></li>
+                <li class="menu-border"><a href="finances.html" class="menufontclr"><i class="md md-attach-money"></i> Newsletter</a></li>
+
+				
+			</ul>
+		</div>
+	</div>
+</div>
+  <!-- // Sidebar -->
+
+  <!-- Sidebar Right -->
+  <div class="sidebar right-side" id="sidebar-right">
+	<!-- Wrapper Reqired by Nicescroll -->
+	<div class="nicescroll">
+		<div class="wrapper">
+			<div class="block-primary">
+				<div class="media">
+					<div class="media-left media-middle">
+						<a href="#">
+							<img src="images/guy.jpg" alt="person" class="img-circle border-white" width="60"/>
+						</a>
+					</div>
+					<div class="media-body media-middle">
+						<a href="account.html" class="h4">Andrew Brain</a>
+						<a href="login.html" class="logout pull-right"><i class="md md-exit-to-app"></i></a>
+					</div>
+				</div>
+			</div>
+			<ul class="nav nav-sidebar" id="sidebar-menu">
+				<li><a href="account.html"><i class="md md-person-outline"></i> Account</a></li>
+				<li><a href="email.html"><i class="md md-email"></i> Emails</a></li>
+				<li><a href="#"><i class="md md-attach-money"></i> Payments</a></li>
+				<li><a href="#"><i class="md md-settings"></i> Settings</a></li>
+				<li><a href="login.html"><i class="md md-exit-to-app"></i> Logout</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+  <!-- // Sidebar -->
+
+
+<div class="container-fluid pd0" >
+      
+<div id="main" ng-controller="MainController as main">
+
+ 	<!-- #banner -->
+	<section id="banner">
+		<div class="banner-container" ng-controller="BannerController as bannerCtrl">
+			<div class="banner">
+				<ul>
+
+					<li 
+						data-transition="fade" 
+						data-slotamount="7" 
+						class="slider-1 text-center gradient-overlay"
+						data-thumb="img/background/banner-bg.jpg"
+						data-title="EXPERTISE YOU CAN TRUST">
+						<img 
+							src="img/background/banner-bg.jpg" 
+							data-bgposition="center center" 
+							data-kenburns="on" 
+							data-duration="20000" 
+							data-ease="Linear.easeNone" 
+							data-bgfit="100" 
+							data-bgfitend="130" 
+							data-bgpositionend="center center"
+							alt="slider image">
+						<div 
+							class="caption sfb tp-resizeme text-center"
+							data-x="0" 
+							data-y="90" 
+							data-speed="700" 
+							data-start="1000"  
+							data-easing="easeOutBack">
+
+							<div class="date">
+								December 31, 2015 23:59pm
+							</div>
+						</div>
+
+						<div 
+							class="caption sfb tp-resizeme"
+							data-x="0" 
+							data-y="140" 
+							data-speed="700" 
+							data-start="1500"  
+							data-easing="easeOutBack">
+
+							<h1>{{bannerCtrl.eventinfo[0].title}}</h1>
+						</div>					
+						<div 
+							class="caption sfb tp-resizeme input-box"
+							data-x="0" 
+							data-y="240" 
+							data-speed="700" 
+							data-start="2200"  
+							data-easing="easeOutBack">
+
+							<ul class="count-down"></ul>
+						</div>
+
+						<div 
+							class="caption sfb tp-resizeme text-center"
+							data-x="0" 
+							data-y="400" 
+							data-speed="700" 
+							data-start="2500"  
+							data-easing="easeOutBack">
+
+						 <a href="#" class="btn outline-button" id="postjob"><i class="md md-group-add"></i> Join Now</a>
+							<!--<li class="scrollToLink"><a href="#upcoming-event" class="bordered hvr-bounce-to-right">Get Notification</a></li>-->
+
+						</div>
+					</li>
+					<!--<li 
+						data-transition="fade" 
+						data-slotamount="7" 
+						class="slider-2 text-center gradient-overlay" 
+						data-thumb="img/background/subscribe-section-bg.jpg"
+						data-title="EXPERTISE YOU CAN TRUST">
+
+						<img 
+							src="img/background/subscribe-section-bg.jpg" 
+							data-bgposition="center center" 
+							data-kenburns="on" 
+							data-duration="20000" 
+							data-ease="Linear.easeNone" 
+							data-bgfit="100" 
+							data-bgfitend="130" 
+							data-bgpositionend="center center"
+							alt="slider image">
+
+						<div 
+							class="caption sfb tp-resizeme text-center"
+							data-x="0" 
+							data-y="300" 
+							data-speed="700" 
+							data-start="1000"  
+							data-easing="easeOutBack">
+
+							<h1>DONT MISS THE EVENT</h1>
+						</div>
+
+						<div 
+							class="caption sfb tp-resizeme"
+							data-x="0" 
+							data-y="370" 
+							data-speed="700" 
+							data-start="1500"  
+							data-easing="easeOutBack">
+
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, neque,  <br> nam? Sed at dolor, perferendis, quaerat, esse dignissimos praesentium unde dolore.</p>
+						</div>
+						<ul 
+							class="caption sfb tp-resizeme banner-buttons"
+							data-x="0" 
+							data-y="450" 
+							data-speed="700" 
+							data-start="2500"  
+							data-easing="easeOutBack">
+
+							<li class="scrollToLink"><button type="submit" class="colored hvr-bounce-to-right">Register Now</button></li>
+							<li class="scrollToLink"><a href="#upcoming-event" class="bordered hvr-bounce-to-right">Watch Video</a></li>
+
+						</ul>
+					</li>-->
+					<!--<li 
+						data-transition="fade" 
+						data-slotamount="7" 
+						class="slider-3 text-center gradient-overlay" 
+						data-thumb="img/background/register-bg.jpg"
+						data-title="EXPERTISE YOU CAN TRUST">
+
+						<img 
+							src="img/background/register-bg.jpg" 
+							data-bgposition="center center" 
+							data-kenburns="on" 
+							data-duration="20000" 
+							data-ease="Linear.easeNone" 
+							data-bgfit="100" 
+							data-bgfitend="130" 
+							data-bgpositionend="center center"
+							alt="slider image">
+
+						<div 
+							class="caption sfb tp-resizeme text-center"
+							data-x="0" 
+							data-y="220" 
+							data-speed="700" 
+							data-start="1000"  
+							data-easing="easeOutBack">
+
+							<div class="date">
+								December 31, 2015 23:59pm
+							</div>
+						</div>
+
+						<div 
+							class="caption sfb tp-resizeme"
+							data-x="0" 
+							data-y="290" 
+							data-speed="700" 
+							data-start="1500"  
+							data-easing="easeOutBack">
+
+							<h1>FRONT END DEVELOPER CONFERENCE</h1>
+						</div>					
+						<div 
+							class="caption sfb tp-resizeme input-box"
+							data-x="0" 
+							data-y="370" 
+							data-speed="700" 
+							data-start="2200"  
+							data-easing="easeOutBack">
+
+							<ul>
+								<li><span><input type="text" placeholder="Your Name"></span></li>
+								<li><span><input type="text" placeholder="Your Email"></span></li>
+								<li><span><input type="text" placeholder="Your Phone"></span></li>
+							</ul>
+						</div>
+
+						<ul 
+							class="caption sfb tp-resizeme banner-buttons"
+							data-x="0" 
+							data-y="450" 
+							data-speed="700" 
+							data-start="2500"  
+							data-easing="easeOutBack">
+
+							<li class="scrollToLink"><button type="submit" class="colored hvr-bounce-to-right">Register Now</button></li>
+							<li class="scrollToLink"><a href="#upcoming-event" class="bordered hvr-bounce-to-right">Watch Video</a></li>
+
+						</ul>
+					</li>-->
+
+				</ul>
+			</div>
+		</div>
+	</section> <!-- /#banner -->
+
+	<div class="panel panel-shadow themebgclr event-search-wrapper">
+    <div class="panel-body">
+        <form class="form-inline filter">
+            
+            <div class="form-group col-md-6">
+                <div class="input-group wid100">
+                	<span class="input-group-addon groupicon" id="basic-addon1">
+                		<i class="md md-search md-lg themeclr2"></i>
+                	</span>
+                    <input type="text" class="form-control group-search" placeholder="Search By Event Name...">
+					
+                </div>
+            </div>
+                 
+          <div class="form-group flr">
+               <button class="btn postjob group-button" ng-click="main.showForm()"><i class="md md-group-add"></i> Create a Event</button>
+          </div>
+           <div class="form-group flr">
+               <button class="btn postjob group-button" id="attend-webinar" ><i class="md md-receipt"></i>Attend Webinar</button>
+          </div>
+          
+        </form>
+    </div>
+</div>
+	<!-- #upcoming-event -->
+	<!--<section id="upcoming-event">
+	
+			
+			<div class="row mgt30">
+				<div class="col-lg-12 pd0">
+					<div class="tab-title-wrap mg0">
+						<ul class="clearfix pd0">
+							<li class="filter active col-md-3 col-sm-6 col-xs-12 pd0" data-filter="all"><span class="event-tab headerbgclr themeclr">Finalized Events</span></li>
+							<li class="filter col-md-3 col-sm-6 col-xs-12 pd0" data-filter=".college-events"><span class="event-tab headerbgclr themeclr">College Events</span></li>
+							<li class="filter col-md-3 col-sm-6 col-xs-12 pd0" data-filter=".polling-events"><span class="event-tab headerbgclr themeclr">Polling Events</span></li>
+							<li class="filter col-md-3 col-sm-6 col-xs-12 pd0" data-filter=".my-events"><span class="event-tab headerbgclr themeclr">My Events</span></li>
+							
+						</ul>
+					</div>
+					<div class="tab-content-wrap row mg0">
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mix my-events college-events hvr-float-shadow wow fadeIn">
+							<div class="img-holder theme-background gradient-overlay">
+								<img src="img/upcoming-event/1.jpg" alt="" class="event-image img-responsive">
+							
+								<div class="event-date themebgclr">
+									<span class="event-fontdate">18th,</span>
+									<span class="event-month">September 2015</span>
+									
+								</div>
+								
+
+							</div>
+							<!--<div class="event-header">
+							
+								<span><i class="fa fa-map-marker"></i>Sahara star hotel, mumbai, india</span>
+
+							</div>
+							<div class="content-wrap text-center">
+								
+								<p class="event-name text-center">Annual meet batch for watumull college</p>
+								<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+								<a href="#" class="btn bold event-buttons hvr-sweep-to-right btn-theme">view more</a>
+							 
+							</div>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="fa fa-share"></i>Share</a>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="md md-people"></i> 36</a>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="md md-add"></i>Join</a>
+						</div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mix polling-events hvr-float-shadow wow fadeIn">
+							<div class="img-holder theme-background gradient-overlay">
+								<img src="img/upcoming-event/1.jpg" alt="" class="event-image img-responsive">
+							
+								<div class="event-date themebgclr">
+									<span class="event-fontdate" id="date-rotator">18th,| 19th,| 20th, </span>
+									<span class="event-month" id="month-rotator">September 2016| November 2016| December 2016</span>
+									
+								</div>
+								
+
+							</div>
+							<!--<div class="event-header">
+							
+								<span><i class="fa fa-map-marker"></i>Sahara star hotel, mumbai, india</span>
+
+							</div>
+							<div class="content-wrap text-center">
+								
+								<p class="event-name text-center">Annual meet batch for watumull college</p>
+								<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+								<a href="#" class="btn bold event-buttons hvr-sweep-to-right btn-theme">view more</a>
+							 
+							</div>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="fa fa-share"></i>Share</a>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="md md-people"></i> 36</a>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="md md-add"></i>Vote</a>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+	
+	</section>-->
+	<!-- /#upcoming-event end here -->
+	<!-- events creation page starts here-->
+	<div class="col-md-12 mgt30" ng-show="main.myVar">
+	<div class="panel panel-shadow">
+		<div class="panel-heading headerbgclr">
+            <h2 class="mg0 text-center">Create Your Event Here</h2>
+		</div>
+    <div class="panel-body">
+          <form class="form-horizontal padding-15" ng-controller="EventfrmController as eventfrm"  ng-submit="eventfrm.addEvent(eventfrm.eventinfo)" novalidate>
+                <!--<div class="form-group">
+                    <label for="avatar" class="col-sm-3 control-label">Event Image</label>
+                    <div class="col-sm-9">
+                        <div>
+                         <img src="img/background/banner-bg.jpg"  alt="person" class="img-responsive">
+                          
+                       </div>
+                    </div>
+                </div>-->
+                <hr>
+                <div class="form-group">
+                     <label for="avatar" class="col-sm-3 control-label">Event Image</label>
+                    <div class="col-sm-9 col-md-offset-3">
+                    	<div flow-init flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"flow-files-submitted="$flow.upload()">
+                            <div class="thumbnail" ng-hide="$flow.files.length">
+                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" />
+                            </div>
+                            <div class="thumbnail" ng-show="$flow.files.length">
+                                <img flow-img="$flow.files[0]" />
+                            </div>
+                            <div>
+                               <button  class="btn btn-default-light bold" ng-hide="$flow.files.length" flow-btn flow-attrs="{accept:'image/*'}" ng-model="eventfrm.eventdata.eventimg.$flow.files[0]">Upload Image</button>
+                              
+                               <button class="btn btn-danger" ng-show="$flow.files.length" ng-click="$flow.cancel()">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-3 control-label">Event Title</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="eventfrm.eventdata.title">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="" class="col-sm-3 control-label">Tag Line</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="eventfrm.eventdata.tagline">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="" class="col-sm-3 control-label">Event Description</label>
+                    <div class="col-sm-9">
+                        <textarea type="text" class="form-control" rows="5" placeholder="Description min 50 characters to 500 characters" ng-model="eventfrm.eventdata.description"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-3 control-label">Event Venue</label>
+                    <div class="col-sm-9">
+                        <textarea type="text" class="form-control" rows="2"></textarea>
+                    </div>
+                </div>
+                  <div class="form-group">
+                   
+                
+                    <label for="" class="col-sm-3 control-label"></label>
+                    <div class="col-sm-3">
+                        <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" placeholder="Select country">
+                            <optgroup label="Alaskan/Hawaiian Time Zone">
+                               <option value="AK">Select Country</option>
+                               <option value="HI">Hawaii</option>
+                           </optgroup>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <select id="basic" class="selectpicker show-tick form-control" data-live-search="true">
+                            <optgroup label="Alaskan/Hawaiian Time Zone">
+                               <option value="AK">Select State</option>
+                               <option value="HI">Hawaii</option>
+                           </optgroup>
+                        </select>
+                    </div>
+                     <div class="col-sm-3">
+                        <select id="basic" class="selectpicker show-tick form-control" data-live-search="true">
+                            <optgroup label="Alaskan/Hawaiian Time Zone">
+                               <option value="AK">Select City</option>
+                               <option value="HI">Hawaii</option>
+                           </optgroup>
+                        </select>
+                    </div>
+                </div>
+               
+               <div class="form-group">
+                    <label for="" class="col-sm-3 control-label">Event date & time</label>
+                    <div class="col-sm-3 input-group event-input-group">
+                    	 <span class="input-group-addon" id="basic-addon1"><i class="md md-today md-lg text-muted"></i></span>
+                        <input class="datepicker form-control" type="text" placeholder="eg:-dd/mm/yyyy" ng-model="eventfrm.eventdata.eventdate">
+                    </div>
+                    <div class="col-sm-3 input-group event-input-group">
+                    	   <span class="input-group-addon" id="basic-addon1"><i class="md md-schedule md-lg text-muted"></i></span>
+                          <input id="timepicker3" type="text" class="form-control">
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label for="" class="col-sm-3 control-label">Polling date & time</label>
+                    <div class="col-sm-3 input-group event-input-group">
+                    	 <span class="input-group-addon" id="basic-addon1"><i class="md md-today md-lg text-muted"></i></span>
+                        <input class="datepicker form-control" type="text" placeholder="eg:-dd/mm/yyyy">
+                    </div>
+                    <div class="col-sm-3 input-group event-input-group">
+                    	   <span class="input-group-addon" id="basic-addon1"><i class="md md-schedule md-lg text-muted"></i></span>
+                          <input id="timepicker1" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-3 control-label">Polling date & time</label>
+                    <div class="col-sm-3 input-group event-input-group">
+                    	 <span class="input-group-addon" id="basic-addon1"><i class="md md-today md-lg text-muted"></i></span>
+                        <input class="datepicker form-control" type="text" placeholder="eg:-dd/mm/yyyy">
+                    </div>
+                    <div class="col-sm-3 input-group event-input-group">
+                    	   <span class="input-group-addon" id="basic-addon1"><i class="md md-schedule md-lg text-muted"></i></span>
+                          <input id="timepicker2" type="text" class="form-control">
+                    </div>
+                </div>
+                  <div class="form-group">
+                    <label for="" class="col-sm-3 control-label">Polling date & time</label>
+                    <div class="col-sm-3 input-group event-input-group">
+                    	 <span class="input-group-addon" id="basic-addon1"><i class="md md-today md-lg text-muted"></i></span>
+                        <input class="datepicker form-control" type="text" placeholder="eg:-dd/mm/yyyy">
+                    </div>
+                    <div class="col-sm-3 input-group event-input-group">
+                    	   <span class="input-group-addon" id="basic-addon1"><i class="md md-schedule md-lg text-muted"></i></span>
+                          <input id="timepicker6" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-3 control-label">Maximum number of attendies</label>
+                    <div class="col-sm-3">
+                    <input id="touch-spin-3" data-toggle="touch-spin" data-verticalbuttons="true" type="text" value="3" name="demo3" class="form-control"/>
+                    </div>
+                </div>
+                 <div class="form-group">
+                     <div class="checkbox checkbox-primary col-md-offset-3 col-md-9">
+                        <input id="checkbox2" type="checkbox">
+                            <label for="checkbox2">
+                               Allow other to invite for this event
+                             </label>
+                     </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-sm-9 ">
+                        <input type="submit" class="btn btn-primary" value="create" ng-click="main.myVar = false"/>
+                    </div>
+                </div>
+
+            </form>
+    </div>
+</div>
+</div>
+
+<div ng-controller="TabsDemoCtrl as tab" ng-hide="main.myVar">
+ 
+
+  <uib-tabset active="activeJustified" justified="true">
+    <uib-tab index="0" heading="Finalized Events" class="event-tab headerbgclr themeclr">
+    <div class="row mg0">
+   
+       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mix  hvr-float-shadow wow fadeIn pdl0" ng-repeat="event in tab.eventinfo" ng-if="event.eventdate">
+							<div class="img-holder theme-background gradient-overlay">
+								<img ng-src="{{event.eventimg}}" alt="" class="event-image img-responsive">
+							
+								<div class="event-date themebgclr">
+									<span class="event-fontdate">18th,</span>
+									<span class="event-month">September 2015</span>
+									
+								</div>
+								
+
+							</div>
+							<!--<div class="event-header">
+							
+								<span><i class="fa fa-map-marker"></i>Sahara star hotel, mumbai, india</span>
+
+							</div>-->
+							<div class="content-wrap text-center bgwhite">
+								
+								<p class="event-name text-center">{{event.title}}</p>
+								<p class="text-center">{{event.description | limitTo:50}}</p>
+								<a href="#" class="btn bold event-buttons hvr-sweep-to-right btn-theme">view more</a>
+							 
+							</div>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="fa fa-share"></i>Share</a>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="md md-people"></i> 36</a>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="md md-add"></i>Join</a>
+	    </div>
+
+       </div>
+    </uib-tab>
+    <uib-tab index="1" heading="College Events"  class="event-tab headerbgclr themeclr">
+           <div class="row mg0">
+   
+       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mix  hvr-float-shadow wow fadeIn pdl0" ng-repeat="event in tab.eventinfo" ng-if="event.createdBy =='admin'">
+							<div class="img-holder theme-background gradient-overlay">
+								<img src="img/upcoming-event/1.jpg" alt="" class="event-image img-responsive">
+							
+								<div class="event-date themebgclr">
+									<span class="event-fontdate">18th,</span>
+									<span class="event-month">September 2015</span>
+									
+								</div>
+								
+
+							</div>
+							<!--<div class="event-header">
+							
+								<span><i class="fa fa-map-marker"></i>Sahara star hotel, mumbai, india</span>
+
+							</div>-->
+							<div class="content-wrap text-center bgwhite">
+								
+								<p class="event-name text-center">{{event.title}}</p>
+								<p class="text-center">{{event.description | limitTo:50}}</p>
+								<a href="#" class="btn bold event-buttons hvr-sweep-to-right btn-theme">view more</a>
+							 
+							</div>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="fa fa-share"></i>Share</a>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="md md-people"></i> 36</a>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="md md-add"></i>Join</a>
+	    </div>
+
+       </div>
+    </uib-tab>
+    <uib-tab index="2" heading="Polling Events"  class="event-tab headerbgclr themeclr">
+
+      <div class="row mg0">
+   
+       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mix  hvr-float-shadow wow fadeIn pdl0" ng-repeat="event in tab.eventinfo" ng-if="event.pollingdate1 && event.pollingdate2 && event.pollingdate3">
+							<div class="img-holder theme-background gradient-overlay">
+								<img src="img/upcoming-event/1.jpg" alt="" class="event-image img-responsive">
+							
+								<div class="event-date themebgclr">
+									<span class="event-fontdate">18th,</span>
+									<span class="event-month">September 2015</span>
+									
+								</div>
+								
+
+							</div>
+							<!--<div class="event-header">
+							
+								<span><i class="fa fa-map-marker"></i>Sahara star hotel, mumbai, india</span>
+
+							</div>-->
+							<div class="content-wrap text-center bgwhite">
+								
+								<p class="event-name text-center">{{event.title}}</p>
+								<p class="text-center">{{event.description | limitTo:50}}</p>
+								<a href="#" class="btn bold event-buttons hvr-sweep-to-right btn-theme">view more</a>
+							 
+							</div>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="fa fa-share"></i>Share</a>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="md md-people"></i> 36</a>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="md md-add"></i>Join</a>
+	    </div>
+
+       </div>
+
+
+
+   </uib-tab>
+    <uib-tab index="3" heading="My Events"  class="event-tab headerbgclr themeclr">
+            <div class="row mg0">
+   
+       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mix  hvr-float-shadow wow fadeIn pdl0" ng-repeat="event in tab.eventinfo" ng-if="event.createdBy =='user'">
+							<div class="img-holder theme-background gradient-overlay">
+								<img src="img/upcoming-event/1.jpg" alt="" class="event-image img-responsive">
+							
+								<div class="event-date themebgclr">
+									<span class="event-fontdate">18th,</span>
+									<span class="event-month">September 2015</span>
+									
+								</div>
+								
+
+							</div>
+							<!--<div class="event-header">
+							
+								<span><i class="fa fa-map-marker"></i>Sahara star hotel, mumbai, india</span>
+
+							</div>-->
+							<div class="content-wrap text-center bgwhite">
+								
+								<p class="event-name text-center">{{event.title}}</p>
+								<p class="text-center">{{event.description | limitTo:50}}</p>
+								<a href="#" class="btn bold event-buttons hvr-sweep-to-right btn-theme">view more</a>
+							 
+							</div>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="fa fa-share"></i>Share</a>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="md md-people"></i> 36</a>
+							<a href="#" class="btn  btn-outline bold event-button"><i class="md md-add"></i>Join</a>
+	    </div>
+
+       </div>
+
+
+
+
+    </uib-tab>
+  </uib-tabset>
+
+<!-- events creation page ends here -->
+  
+</div><!-- ..................................main conatainer ends here ................................................-->
+
+
+      <div class="footer">
+	<a href="index-2.html" class="brand">
+		<i class="md md-multitrack-audio"></i> Blueprint
+	</a>
+	<ul>
+		<li><a href="#">Contact us</a></li>
+		<li><a href="#">Support</a></li>
+	</ul>
+   </div>
+  </div>
+
+
+  <div class="overlay-disabled"></div>
+
+
+  <!-- Plugins -->
+  <script src="js/plugins.min.js"></script>
+
+  
+  <!-- App Scripts -->
+  <script src="js/scripts.js"></script>
+
+
+</body>
+
+<!-- Mirrored from blueprint.aws.ipv4.ro/html/default/timeline.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Feb 2016 08:58:50 GMT -->
+</html>
